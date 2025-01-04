@@ -1,0 +1,27 @@
+/* Element Styling */
+body {
+    margin: 0;
+    overflow-x: none;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    border-bottom: 1px solid black;
+}
+
+select {
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* Class Styling */
+.main-container {
+    
+}
+
+/* ID Styling */
