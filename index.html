@@ -4,12 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>World Clock - Malaysia T</title>
+    <title>TimeNow World Clock</title>
 </head>
 <body>
-    <h1>World Clock</h1>
+    <nav>
+        <h1>TimeNow World Clock</h1>
+        <select name="city" id="city">
+            <option value="">Select a city</option>
+            <option value='America/New_York'>🇺🇸 New York</option>
+            <option value='Asia/Bangkok'>🇹🇭 Bangkok</option>
+            <option value='Asia/Tokyo'>🇯🇵 Tokyo</option>
+            <option value='Australia/Sydney'>🇦🇺 Sydney</option>
+            <option value='Europe/London'>🇬🇧 London</option>
+            <option value='Europe/Madrid'>🇪🇸 Madrid</option>
+            <option value='Europe/Paris'>🇫🇷 Paris</option>
+        </select>
+    </nav>
 
-    <footer>This project was coded by <a href="https://github.com/MalaysiaThomas" target="_blank">Malaysia Thomas</a> and is <a href="https://github.com/MalaysiaThomas/world-clock" target="_blank">open-sourced on GitHub</a>. Hosted on <a href="https://app.netlify.com/teams/malaysiathomas/sites" target="_blank">Netlify</a>.</footer>
+    <div class="main-container">
+        <div class="selected-city-container">
+            <section class="selected-city-name-container">
+                <p>📍</p>
+                <p id="selected-city-name">San Francisco</p>
+            </section>
+
+            <section class="selected-city-image-container">
+                <img src="" alt="" id="selected-city-image">
+            </section>
+
+            <section class="selected-city-current-time-container">
+                <p id="selected-city-current-time">06:28 PM</p>
+                <p id="selected-city-date">Monday, January 10th, 2025</p>
+            </section>
+
+            <section class="selected-city-timezone-container">
+                <p id="selected-city-timezone">Pacific Standard Time</p>
+                <p id="selected-city-time-offset">(UTC/GMT -8 hours)</p>
+            </section>
+        </div>
+
+        <div id="listed-cities-container">
+            <div class="row">
+                <section class="listed-city-date-container">
+                    <p class="date" id="row-one-date">10</p>
+                    <section class="month-day-container">
+                        <p class="month" id="row-one-month">JAN</p>
+                        <p class="day" id="row-one-day">MON</p>
+                    </section>
+                </section>
+
+                <section class="listed-city-name-container">
+                    <p class="city-name" id="row-one-city-name">Los Angeles</p>
+                </section>
+
+                <section class="listed-city-time-container">
+                    <p class="listed-city-current-time" id="row-one-time">0:00:00</p>
+                    <p class="listed-city-time-designation" id="row-one-time-designation">AM</p>
+                </section>
+            </div>
+
+            <div class="row">
+                <section class="listed-city-date-container">
+                    <p class="date" id="row-two-date">10</p>
+                    <section class="month-day-container">
+                        <p class="month" id="row-two-month">JAN</p>
+                        <p class="day" id="row-two-day">MON</p>
+                    </section>
+                </section>
+
+                <section class="listed-city-name-container">
+                    <p class="city-name" id="row-two-city-name">Los Angeles</p>
+                </section>
+
+                <section class="listed-city-time-container">
+                    <p class="listed-city-current-time" id="row-two-time">0:00:00</p>
+                    <p class="listed-city-time-designation" id="row-two-time-designation">AM</p>
+                </section>
+            </div>
+
+            <div class="row">
+                <section class="listed-city-date-container">
+                    <p class="date" id="row-three-date">10</p>
+                    <section class="month-day-container">
+                        <p class="month" id="row-three-month">JAN</p>
+                        <p class="day" id="row-three-day">MON</p>
+                    </section>
+                </section>
+
+                <section class="listed-city-name-container">
+                    <p class="city-name" id="row-three-city-name">Los Angeles</p>
+                </section>
+
+                <section class="listed-city-time-container">
+                    <p class="listed-city-current-time" id="row-three-time">0:00:00</p>
+                    <p class="listed-city-time-designation" id="row-three-time-designation">AM</p>
+                </section>
+            </div>
+
+            <div class="row">
+                <section class="listed-city-date-container">
+                    <p class="date" id="row-four-date">10</p>
+                    <section class="month-day-container">
+                        <p class="month" id="row-four-month">JAN</p>
+                        <p class="day" id="row-four-day">MON</p>
+                    </section>
+                </section>
+
+                <section class="listed-city-name-container">
+                    <p class="city-name" id="row-four-city-name">Los Angeles</p>
+                </section>
+
+                <section class="listed-city-time-container">
+                    <p class="listed-city-current-time" id="row-four-time">0:00:00</p>
+                    <p class="listed-city-time-designation" id="row-four-time-designation">AM</p>
+                </section>
+            </div>
+
+            <div class="row">
+                <section class="listed-city-date-container">
+                    <p class="date" id="row-five-date">10</p>
+                    <section class="month-day-container">
+                        <p class="month" id="row-five-month">JAN</p>
+                        <p class="day" id="row-five-day">MON</p>
+                    </section>
+                </section>
+
+                <section class="listed-city-name-container">
+                    <p class="city-name" id="row-five-city-name">Los Angeles</p>
+                </section>
+
+                <section class="listed-city-time-container">
+                    <p class="listed-city-current-time" id="row-five-time">0:00:00</p>
+                    <p class="listed-city-time-designation" id="row-five-time-designation">AM</p>
+                </section>
+            </div>
+
+            <div class="row">
+                <section class="listed-city-date-container">
+                    <p class="date" id="row-six-date">10</p>
+                    <section class="month-day-container">
+                        <p class="month" id="row-six-month">JAN</p>
+                        <p class="day" id="row-six-day">MON</p>
+                    </section>
+                </section>
+
+                <section class="listed-city-name-container">
+                    <p class="city-name" id="row-six-city-name">Los Angeles</p>
+                </section>
+
+                <section class="listed-city-time-container">
+                    <p class="listed-city-current-time" id="row-six-time">0:00:00</p>
+                    <p class="listed-city-time-designation" id="row-six-time-designation">AM</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer">This project was coded by <a href="https://github.com/MalaysiaThomas" target="_blank">Malaysia Thomas</a> and is <a href="https://github.com/MalaysiaThomas/world-clock" target="_blank">open-sourced on GitHub</a>. Hosted on <a href="https://app.netlify.com/teams/malaysiathomas/sites" target="_blank">Netlify</a>.</p>
+    </footer>
 
     <script src="app.js"></script>
 </body>
