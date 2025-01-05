@@ -1,14 +1,18 @@
 /* Element Styling */
 body {
     margin: 0;
+    height: 100dvh;
     overflow-x: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
+    padding: 5px 50px;
     border-bottom: 1px solid black;
 }
 
@@ -17,11 +21,129 @@ select {
     height: 40px;
     padding: 10px;
     border-radius: 20px;
+    transition: all 200ms ease-in-out;
+}
+
+select:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
+footer {
+    text-align: center;
+}
+
+a {
+    color: gray;
+    transition: all 200ms ease-in-out;
+}
+
+a:hover {
+    color: red;
 }
 
 /* Class Styling */
 .main-container {
-    
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
 }
 
+.sectioned-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selected-city-name-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.selected-city-video-container {
+    border: 1px solid black;
+    background-color: rgb(180, 179, 179);
+    width: 80%;
+}
+
+.selected-city-current-time-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.selected-city-timezone-container {
+    display: flex;
+    gap: 5px;
+    color: rgb(101, 99, 99);
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+    transition: all 200ms ease-in-out;
+}
+
+.row:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    scale: 1.05;
+}
+
+
+
+.listed-city-date-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.date {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.month, .day {
+    margin: 0;
+    font-size: 12px;
+}
+
+.city-name {
+    font-weight: bold;
+}
+
+.listed-city-time-container {
+    display: flex;
+    gap: 2px;
+    font-weight: bold;
+    align-items: center;
+}
+
+.listed-city-current-time {
+    font-size: 20px;
+}
+
+.listed-city-time-designation {
+    font-size: 12px;
+}
+
+
 /* ID Styling */
+#selected-city-current-time {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+}
+
+#selected-city-date {
+    font-style: italic;
+    margin: 0;
+}
