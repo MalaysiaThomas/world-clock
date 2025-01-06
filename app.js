@@ -65,16 +65,22 @@ let rowSixDesignation = document.getElementById("row-six-time-designation");
     rowSixCity.innerHTML = "Sydney"
 
 // Load users' location information as default selected city
-function formatLocatedCityName () {
+function formatLocatedCity () {
     let userLocation = moment.tz.guess()
     let userLocationFormatted = userLocation.replace("_", " ")
     if (selectedCityName.innerHTML === "Locating...") {
         selectedCityName.innerHTML = userLocationFormatted
-        selectedCityTime.innerHTML = moment().format('hh:mm A')
-        selectedCityDate.innerHTML = moment().format('dddd, MMMM Do YYYY');
     }
 }
-formatLocatedCityName()
+formatLocatedCity()
+setInterval(formatLocatedCity, 1000);
+
+function locatedCityTimeDisplay() {
+    selectedCityTime.innerHTML = moment().format("hh:mm:ss A");
+    selectedCityDate.innerHTML = moment().format("dddd, MMMM Do YYYY");
+}
+locatedCityTimeDisplay()
+setInterval(locatedCityTimeDisplay, 1000)
 
 // Load listed city information
 function listedCityDateDisplay() {
@@ -111,24 +117,14 @@ listedCityDateDisplay()
 setInterval(listedCityDayDisplay, 1000)
 
 function listedCityTimeDisplay() {
-    rowOneTime.innerHTML = moment.tz(`${rowOne}`).format("hh:mm:ss");
-    rowTwoTime.innerHTML = moment.tz(`${rowTwo}`).format("hh:mm:ss");
-    rowThreeTime.innerHTML = moment.tz(`${rowThree}`).format("hh:mm:ss");
-    rowFourTime.innerHTML = moment.tz(`${rowFour}`).format("hh:mm:ss");
-    rowFiveTime.innerHTML = moment.tz(`${rowFive}`).format("hh:mm:ss");
-    rowSixTime.innerHTML = moment.tz(`${rowSix}`).format("hh:mm:ss");
+    let timeFormat = "hh:mm A"
+    rowOneTime.innerHTML = moment.tz(`${rowOne}`).format(`${timeFormat}`);
+    rowTwoTime.innerHTML = moment.tz(`${rowTwo}`).format(`${timeFormat}`);
+    rowThreeTime.innerHTML = moment.tz(`${rowThree}`).format(`${timeFormat}`);
+    rowFourTime.innerHTML = moment.tz(`${rowFour}`).format(`${timeFormat}`);
+    rowFiveTime.innerHTML = moment.tz(`${rowFive}`).format(`${timeFormat}`);
+    rowSixTime.innerHTML = moment.tz(`${rowSix}`).format(`${timeFormat}`);
 
 }
 listedCityTimeDisplay()
 setInterval(listedCityTimeDisplay, 1000)
-
-function listedCityDesignationDisplay () {
-    rowOneDesignation.innerHTML = moment.tz(`${rowOne}`).format("A");
-    rowTwoDesignation.innerHTML = moment.tz(`${rowTwo}`).format("A");
-    rowThreeDesignation.innerHTML = moment.tz(`${rowThree}`).format("A");
-    rowFourDesignation.innerHTML = moment.tz(`${rowFour}`).format("A");
-    rowFiveDesignation.innerHTML = moment.tz(`${rowFive}`).format("A");
-    rowSixDesignation.innerHTML = moment.tz(`${rowSix}`).format("A");
-}
-listedCityDesignationDisplay()
-setInterval(listedCityDesignationDisplay, 1000)
