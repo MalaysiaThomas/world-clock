@@ -64,6 +64,13 @@ dotlottie-player {
     margin: -25px 0 0 -25px;
 }
 
+video {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 /* Class Styling */
 .main-container {
     display: flex;
@@ -99,10 +106,12 @@ dotlottie-player {
 }
 
 .selected-city-video-container {
-    border: 1px solid rgb(255, 255, 255);
-    background-color: rgb(180, 179, 179);
-    width: 95%;
-    border-radius: 80px;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.154);
 }
 
 .selected-city-current-time-container {
