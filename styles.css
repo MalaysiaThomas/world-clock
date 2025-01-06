@@ -26,7 +26,7 @@ h1 {
     font-weight: 900;
     font-variation-settings:
     "ROND" 100;
-    font-size: 45px;
+    font-size: 30px;
 }
 
 select {
@@ -101,7 +101,6 @@ video {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: -20px;
     width: 95%;
 }
 
@@ -158,6 +157,7 @@ video {
 .month, .day {
     margin: 0;
     font-size: 12px;
+    text-transform: uppercase;
 }
 
 .city-name {
