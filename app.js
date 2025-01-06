@@ -117,7 +117,7 @@ listedCityDateDisplay()
 setInterval(listedCityDayDisplay, 1000)
 
 function listedCityTimeDisplay() {
-    let timeFormat = "hh:mm A"
+    let timeFormat = "hh:mm [<small>] A [</small>]"
     rowOneTime.innerHTML = moment.tz(`${rowOne}`).format(`${timeFormat}`);
     rowTwoTime.innerHTML = moment.tz(`${rowTwo}`).format(`${timeFormat}`);
     rowThreeTime.innerHTML = moment.tz(`${rowThree}`).format(`${timeFormat}`);
