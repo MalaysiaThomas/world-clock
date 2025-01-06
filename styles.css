@@ -43,6 +43,23 @@ select:hover {
     background-color: rgb(231, 228, 228);
 }
 
+button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: #FFFFFF;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.353);
+    scale: 1.05;
+    transition: all 200ms ease-in-out;
+}
+
 footer {
     text-align: center;
     font-size: 12px;
@@ -133,14 +150,6 @@ video {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid rgb(223, 221, 221);
-    transition: all 200ms ease-in-out;
-}
-
-.row:hover {
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.353);
-    color: white;
-    scale: 1.05;
 }
 
 .listed-city-date-container {
@@ -162,6 +171,7 @@ video {
 
 .city-name {
     font-weight: bold;
+    font-size: 18px;
 }
 
 .listed-city-time-container {
@@ -170,6 +180,7 @@ video {
     font-weight: bold;
     align-items: center;
 }
+
 
 .listed-city-current-time {
     font-size: 20px;
