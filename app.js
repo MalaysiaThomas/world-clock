@@ -44,6 +44,8 @@ let rowThreeDesignation = document.getElementById("row-three-time-designation");
 let rowFourDesignation = document.getElementById("row-four-time-designation");
 let rowFiveDesignation = document.getElementById("row-five-time-designation");
 let rowSixDesignation = document.getElementById("row-six-time-designation");
+// City buttons
+let citybuttons = document.querySelectorAll("button")
 
 // Insert desired city names into listed city slots
     let rowOne = "America/New_York"
@@ -75,12 +77,17 @@ function formatLocatedCity () {
 formatLocatedCity()
 setInterval(formatLocatedCity, 1000);
 
+
+let currentCity = "default";
+let interval;
 function locatedCityTimeDisplay() {
-    selectedCityTime.innerHTML = moment().format("hh:mm:ss A");
-    selectedCityDate.innerHTML = moment().format("dddd, MMMM Do YYYY");
+    if (currentCity === "default") {
+        selectedCityTime.innerHTML = moment().format("hh:mm:ss A");
+        selectedCityDate.innerHTML = moment().format("dddd, MMMM Do YYYY");
+    }
 }
 locatedCityTimeDisplay()
-setInterval(locatedCityTimeDisplay, 1000)
+interval = setInterval(locatedCityTimeDisplay, 1000)
 
 // Load listed city information
 function listedCityDateDisplay() {
@@ -128,3 +135,69 @@ function listedCityTimeDisplay() {
 }
 listedCityTimeDisplay()
 setInterval(listedCityTimeDisplay, 1000)
+
+// Update displayed city based on user selection from listed cities
+function updateCityDisplay () {
+
+    citybuttons.forEach(button => button.addEventListener("click", () => {
+        clearInterval(interval);
+        interval = setInterval(() => {
+            
+            switch(button.id) {
+                    case "row-one-btn":
+                        selectedCityName.innerHTML = rowOne.replace("_", " ")
+                        selectedCityTime.innerHTML = moment().tz(`${rowOne}`).format("hh:mm:ss A");
+                        selectedCityDate.innerHTML = moment().tz(`${rowOne}`).format("dddd, MMMM Do YYYY");
+                        break;
+                    case "row-two-btn": 
+                        selectedCityName.innerHTML = rowTwo.replace("_", " ");
+                        selectedCityTime.innerHTML = moment()
+                          .tz(`${rowTwo}`)
+                          .format("hh:mm:ss A");
+                        selectedCityDate.innerHTML = moment()
+                          .tz(`${rowTwo}`)
+                          .format("dddd, MMMM Do YYYY");
+                        break;
+                    case "row-three-btn": 
+                        selectedCityName.innerHTML = rowThree.replace("_", " ");
+                        selectedCityTime.innerHTML = moment()
+                          .tz(`${rowThree}`)
+                          .format("hh:mm:ss A");
+                        selectedCityDate.innerHTML = moment()
+                          .tz(`${rowThree}`)
+                          .format("dddd, MMMM Do YYYY");
+                        break;
+                    case "row-four-btn": 
+                        selectedCityName.innerHTML = rowFour.replace("_", " ");
+                        selectedCityTime.innerHTML = moment()
+                          .tz(`${rowFour}`)
+                          .format("hh:mm:ss A");
+                        selectedCityDate.innerHTML = moment()
+                          .tz(`${rowFour}`)
+                          .format("dddd, MMMM Do YYYY");
+                        break;
+                    case "row-five-btn": 
+                        selectedCityName.innerHTML = rowFive.replace("_", " ");
+                        selectedCityTime.innerHTML = moment()
+                          .tz(`${rowFive}`)
+                          .format("hh:mm:ss A");
+                        selectedCityDate.innerHTML = moment()
+                          .tz(`${rowFive}`)
+                          .format("dddd, MMMM Do YYYY");
+                        break;
+                    case "row-six-btn": 
+                        selectedCityName.innerHTML = rowSix.replace("_", " ");
+                        selectedCityTime.innerHTML = moment()
+                          .tz(`${rowSix}`)
+                          .format("hh:mm:ss A");
+                        selectedCityDate.innerHTML = moment()
+                          .tz(`${rowSix}`)
+                          .format("dddd, MMMM Do YYYY");
+                        break;
+                }
+        }, 1000);
+
+    }))
+}
+updateCityDisplay()
+
