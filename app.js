@@ -46,8 +46,13 @@ let rowFiveDesignation = document.getElementById("row-five-time-designation");
 let rowSixDesignation = document.getElementById("row-six-time-designation");
 // City buttons
 let citybuttons = document.querySelectorAll("button")
+//Select element
+let selectElement = document.getElementById("selectCity")
 
 // Insert desired city names into listed city slots
+    let userLocation = moment.tz.guess();
+    let userLocationFormatted = userLocation.replace("_", " ");
+
     let rowOne = "America/New_York"
     rowOneCity.innerHTML = "New York"
     
@@ -68,8 +73,6 @@ let citybuttons = document.querySelectorAll("button")
 
 // Load users' location information as default selected city
 function formatLocatedCity () {
-    let userLocation = moment.tz.guess()
-    let userLocationFormatted = userLocation.replace("_", " ")
     if (selectedCityName.innerHTML === "Locating...") {
         selectedCityName.innerHTML = userLocationFormatted
     }
@@ -138,7 +141,6 @@ setInterval(listedCityTimeDisplay, 1000)
 
 // Update displayed city based on user selection from listed cities
 function updateCityDisplay () {
-
     citybuttons.forEach(button => button.addEventListener("click", () => {
         clearInterval(interval);
         interval = setInterval(() => {
@@ -201,3 +203,68 @@ function updateCityDisplay () {
 }
 updateCityDisplay()
 
+// Load city selection from dropdown
+let optionOne = selectElement[1].value
+let optionTwo = selectElement[2].value
+let optionThree = selectElement[3].value
+let optionFour = selectElement[4].value
+let optionFive = selectElement[5].value
+let optionSix = selectElement[6].value
+let optionSeven = selectElement[7].value
+let optionEight = selectElement[8].value
+let optionNine = selectElement[9].value
+
+
+function loadCitySelection(event) {
+    clearInterval(interval);
+    setInterval(() => {
+        switch(event.target.value) {
+            case optionOne: 
+                currentCity = "default"
+                selectedCityName.innerHTML = userLocationFormatted;
+                locatedCityTimeDisplay()
+                break;
+            case optionTwo: 
+                selectedCityName.innerHTML = optionTwo.replace("_", " ");
+                selectedCityTime.innerHTML = moment().tz(`${optionTwo}`).format("hh:mm:ss A");
+                selectedCityDate.innerHTML = moment().tz(`${optionTwo}`).format("dddd, MMMM Do YYYY");
+                break;
+            case optionThree: 
+                selectedCityName.innerHTML = optionThree.replace("_", " ");
+                selectedCityTime.innerHTML = moment().tz(`${optionThree}`).format("hh:mm:ss A");
+                selectedCityDate.innerHTML = moment().tz(`${optionThree}`).format("dddd, MMMM Do YYYY");
+                break;
+            case optionFour: 
+                selectedCityName.innerHTML = optionFour.replace("_", " ");
+                selectedCityTime.innerHTML = moment().tz(`${optionFour}`).format("hh:mm:ss A");
+                selectedCityDate.innerHTML = moment().tz(`${optionFour}`).format("dddd, MMMM Do YYYY");
+                break;
+            case optionFive: 
+                selectedCityName.innerHTML = optionFive.replace("_", " ");
+                selectedCityTime.innerHTML = moment().tz(`${optionFive}`).format("hh:mm:ss A");
+                selectedCityDate.innerHTML = moment().tz(`${optionFive}`).format("dddd, MMMM Do YYYY");
+                break;
+            case optionSix: 
+                selectedCityName.innerHTML = optionSix.replace("_", " ");
+                selectedCityTime.innerHTML = moment().tz(`${optionSix}`).format("hh:mm:ss A");
+                selectedCityDate.innerHTML = moment().tz(`${optionSix}`).format("dddd, MMMM Do YYYY");
+                break;
+            case optionSeven: 
+                selectedCityName.innerHTML = optionSeven.replace("_", " ");
+                selectedCityTime.innerHTML = moment().tz(`${optionSeven}`).format("hh:mm:ss A");
+                selectedCityDate.innerHTML = moment().tz(`${optionSeven}`).format("dddd, MMMM Do YYYY");
+                break;
+            case optionEight: 
+                selectedCityName.innerHTML = optionEight.replace("_", " ");
+                selectedCityTime.innerHTML = moment().tz(`${optionEight}`).format("hh:mm:ss A");
+                selectedCityDate.innerHTML = moment().tz(`${optionEight}`).format("dddd, MMMM Do YYYY");
+                break;
+            case optionNine: 
+                selectedCityName.innerHTML = optionNine.replace("_", " ");
+                selectedCityTime.innerHTML = moment().tz(`${optionNine}`).format("hh:mm:ss A");
+                selectedCityDate.innerHTML = moment().tz(`${optionNine}`).format("dddd, MMMM Do YYYY");
+                break;
+        }
+    }, 1000);
+}
+selectElement.addEventListener("change", loadCitySelection)
