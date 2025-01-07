@@ -7,7 +7,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     font-family: "Fustat", serif;
-    background-image: url(media/smooth-3221868_1280.jpg);
+    background-image: url(media/AdobeStock_783626371.jpeg);
     background-size: cover;
     color: white;
 }
@@ -17,16 +17,17 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 5px 40px;
-    border-bottom: 1px solid black;
-    background-color: #51515122;
+    border-bottom: 1px solid  #1a28523e;
+    background-color: #d6e0f23e;
+    color: #1a2852;
 }
 
 h1 {
-    font-family: "Doto", serif;
-    font-weight: 900;
-    font-variation-settings:
-    "ROND" 100;
-    font-size: 30px;
+  font-family: "Funnel Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
 }
 
 select {
@@ -36,37 +37,55 @@ select {
     border-radius: 20px;
     transition: all 200ms ease-in-out;
     font-family: "Fustat", serif;
+    color: #1a2852;
+    border: 1px solid #1a2852;
 }
 
 select:hover {
     cursor: pointer;
-    background-color: rgb(231, 228, 228);
+    background-color: rgb(211, 228, 253);
 }
 
 button {
     width: 100%;
+    margin-top: 2px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: transparent;
+    color: #1a2852;
+    font-family: "Fustat", serif;
     border: none;
-    color: #FFFFFF;
+    background-size: 200% auto;
+    border-radius: 50px;
+    transition: all 500ms ease-in-out;
+}
+
+button:active {
+  scale: .85;
 }
 
 button:hover {
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.353);
-    scale: 1.05;
-    transition: all 200ms ease-in-out;
+    color: white;
+    background-image: linear-gradient(to right, #ffffff70 0%, #6f9dde  51%, #062d68  100%);
+    background-position: right center;
+}
+
+hr {
+    width: 100%;
+    margin: 0 auto;
+    border: .5px solid #1a28523e;
 }
 
 footer {
     text-align: center;
     font-size: 12px;
+    color: #1a2852;
 }
 
 a {
-    color: rgb(255, 255, 255);
+    color: #213572;
     transition: all 200ms ease-in-out;
 }
 
@@ -94,13 +113,15 @@ video {
     justify-content: space-between;
     align-items: center;
     padding-right: 50px;
-    border: 1px solid white;
     margin: 0 40px;
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 8px );
-    -webkit-backdrop-filter: blur( 8px );
     border-radius: 10px;
+    background: linear-gradient(
+    50deg,
+    rgba(255, 255, 255, 0.81) 12%,
+    rgba(255, 255, 255, 0.227) 77%);
+    box-shadow: 0px 4px 24px 1px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .sectioned-container {
@@ -111,7 +132,25 @@ video {
 }
 
 .selected-city-container{
-    padding: 0 40px;
+    padding: 10px 40px;
+    border-radius: 10px 0px 0 10px;
+    margin-right: 50px;
+
+
+  background-color: #212024;
+  background-image: radial-gradient(
+      at 50% 40%,
+      #3373f4 0px,
+      transparent 85%
+    ),
+    radial-gradient(at 49% 20%, rgb(70, 119, 224) 0px, transparent 85%),
+    radial-gradient(at 14% 46%, #7faaaa 0px, transparent 85%),
+    radial-gradient(at 0% 64%, #84a9f3 0px, transparent 85%),
+    radial-gradient(at 90% 80%, #b6bfc2 0px, transparent 85%),
+    radial-gradient(at 100% 99%, #6e93df 0px, transparent 85%);
+
+    box-shadow: 0px -16px 24px 0px rgba(255, 255, 255, 0.25) inset;
+
 }
 
 .selected-city-name-container {
@@ -149,7 +188,6 @@ video {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid rgb(223, 221, 221);
 }
 
 .listed-city-date-container {
@@ -197,3 +235,14 @@ video {
     font-style: italic;
     margin: 0;
 }
+
+/* From Uiverse.io by SelfMadeSystem */ 
+.container {
+  position: absolute;
+  inset: 0;
+  background: #000;
+}
+
+
+
+
